@@ -22,6 +22,7 @@ function App() {
   
 return (
     <div >
+      <p>chabchouuub</p>
     
                <button onClick={() =>{
                   setQuantityPortable(quantityPortable+1)
