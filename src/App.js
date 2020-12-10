@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import prixPromotionnn from './functions/prixPromotionnn';
 import testt from './functions/testt';
 import List from "./components/List";
-
+import Exercice from "./components/Exercice";
 function App() {
   const [quantityPortable, setQuantityPortable] = useState(0);
   const [quantityPc, setQuantityPc] = useState(0);
@@ -20,9 +20,18 @@ function App() {
   const prixChargeur = prixPromotionnn(priceChargeur, chargeurPromotion);
   const result = testt(quantityPortable, quantityPc, value3, prixPc, prixPortable, prixChargeur);
   console.log("portablePromotion", portablePromotion)
+  const listString = ["saber", "anfel", "ayoub", "wiem"];
+  const listNumber = [1, 2, 3, 4];
 
+  const listPersons = [
+      { name: "saber", age: 29, profession: "ingénieur" },
+      { name: "anfel", age: 24 },
+      { age: 29, name: "ayoub", profession: "yekhdem fi gabon" }
+  ]
+  const listsString = ["saber","anfel"];
   return (
     <div >
+
       <p>chabchouuub</p>
 
       <button onClick={() => {
@@ -84,7 +93,9 @@ function App() {
 
       {cliquer && <p>{result}</p>}
       <hr />
-      <List />
+      <List listString={listString} listNumber={listNumber} listPersons={listPersons}/>
+      <hr/>
+      <Exercice listsString={listsString}/>
     </div>
   );
 }
